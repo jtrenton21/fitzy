@@ -10,26 +10,49 @@ class WorkoutsController < ApplicationController
 
   def show
     @workout = Workout.find(params[:id])
-    @exercise = Exercise.find(params[:id])
+    # @exercise = Exercise.find(params[:id])
 
    
   end
 
   def new
-    @workouts = Workout.new(params[:id])
-  end
+    @workouts = current_user.workouts.new(params[:id])
+    @exercises = current_user.exercises.new(params[:id])
+    
+ end
   
   def create
-   @workout = Workout.new(params[:workout])
-   @workout.save
-   if current_user.workouts.create(params[:id])
-      
-      flash[:success] = "Workout Created!"
-      redirect_to workouts_path
-    else
-      @feed_items = []
-      render 'users/dashboard'
+
+    render text: params[:workout][:exercises_attributes]
+
+    # params[:workout][:exercises_attributes].each do |exercise|
+    #   puts exercise
+    # end
+
+   # @workout = Workout.create(name: params[:workout][:name])
+
+   params[:workout][:exercises_attributes].each do |exercise|
+      puts exercise.name
     end
+
+   
+  #  @exercise.user_id = current_user.id
+
+  #  if @exercise.save
+   
+  #  else
+  #  end
+
+
+  #  @workout.save
+  #  if current_user.workouts.create(params[:id])
+      
+  #     flash[:success] = "Workout Created!"
+  #     redirect_to workouts_path
+  #   else
+  #     @feed_items = []
+  #     render 'users/dashboard'
+  #   end
   end
 
   

@@ -12,7 +12,7 @@
            <% @exercises.each do |exercise| %>
       <tr>
         <td><%= link_to exercise.name, exercise %></td>
-        <td><%= exercise.target %></td>
+        <td><%= exercise.muscle_target %></td>
         <td><%= pluralize(exercise.reps.size, "Sets") %></td>
         <td>
          <p class='linx'> <%= link_to 'Display', exercises_path %> </p>
