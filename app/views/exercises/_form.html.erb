@@ -1,0 +1,31 @@
+<%= simple_form_for(@exercise) do |f| %>
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this workout from being saved:</h2>
+      <ul>
+      <% @exercise.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<fieldset>
+  <%= f.fields_for :workouts do |builder| %>
+  <%= render 'workout_fields', f: builder %>
+  <% end %><br/>
+  <%= f.label :name, "Exercise Name" %>
+  <%= f.text_field :name %><br/>
+   <%= f.input :muscle_target, collection: ["Back","Chest","Biceps","Triceps","Shoulders","Calves","Hamstring","Quads","Glutes"], prompt: "Select One" %><br/>
+  <%= f.label :info, "Additional Info" %>
+  <%= f.text_area :info %><br/>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "Remove Exercise", '#', class: "remove_fields" %><br/>
+  <%= f.fields_for :reps do |builder| %>
+    <%= render 'rep_fields', f: builder %>
+  <% end %><br/>
+  <%= link_to_add_fields "Add Exercise Set", f, :reps %>
+</fieldset>
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

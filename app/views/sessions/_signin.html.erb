@@ -1,0 +1,17 @@
+
+<div class="row-fluid">
+  <div class="span6 offset3">
+    <%= simple_form_for(:session, url: sessions_path) do |f| %>
+
+     <p class='sinform'> <%= f.label 'Email' %>
+      <%= f.text_field :email %>
+
+      <%= f.label 'Password' %>
+      <%= f.password_field :password %><br>
+      </p>
+    <p id='sinbut'>  <%= f.submit "Sign In", class: "btn btn-small btn-primary" %></p>
+    <% end %>
+
+    <p id='newuser'>New User? <%= link_to "Sign Up Now!", signup_path %></p>
+  </div>
+</div>
