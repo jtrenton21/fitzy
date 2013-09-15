@@ -3,7 +3,8 @@
   <div class="span6 offset3">
     <%= simple_form_for(:session, url: sessions_path) do |f| %>
 
-     <p class='sinform'> <%= f.label 'Email' %>
+     <p class='sinform'> 
+      <%= f.label "Email" %>
       <%= f.text_field :email %>
 
       <%= f.label 'Password' %>

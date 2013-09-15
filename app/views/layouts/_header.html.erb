@@ -24,16 +24,15 @@
                 
                    <li> 
                    <p id='heads'>  
-                    <span id='hstat'> <%=link_to current_user.name, users_path  %></span>
+                    <span id='hstat'> <%=link_to current_user.name, users_path  %></span><span id='hstat3'><%= link_to "Sign Out",signout_path, method: "delete" %></span>
                     <span id='hstat2'>  <%= render 'shared/stats' %></span>
-                    <span id='hstat3'><%= link_to "Sign Out",signout_path, method: "delete" %></span>
+                   
                    </p>
                 </li>
               <% else %>
                 <li><%= link_to "Sign in", signin_path %></li>
               <% end %>
             </ul>
-          </nav>
-      </div>
+          </nav>      </div>
   </div>
 </header>

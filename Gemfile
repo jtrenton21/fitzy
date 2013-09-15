@@ -59,6 +59,10 @@ end
 
   gem 'simple_form'
 
+  gem 'thin'
+
+  gem 'roleable'
+
   
 
  

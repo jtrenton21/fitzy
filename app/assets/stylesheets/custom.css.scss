@@ -13,20 +13,60 @@ input {
 }
 
 .ptitle{
+  color:#0088cc;
   text-align:center;
   margin:0 auto;
+  padding-top:30px;
 }
 
 
 #landing{
 
-  margin:0;
+ 
   background-image: url('runbg.jpg');
   background-repeat: no-repeat;
   background-position:center;
-  height:600px;
+  background-size:100%;
+  height:560px;
+  margin:0;
   width:100%;
 
+}
+
+#landstuff{
+
+  height:150px;
+}
+
+#signin3{
+
+  clear:both;
+  color:white;
+  margin-left:460px;
+  padding-top:20px;
+  width:300px;
+}
+
+#newuser{
+  font-size:18px;
+  margin-left:5px;
+  width:300px;
+}
+
+#sinbut{
+
+  margin-left:160px;
+}
+
+.sinform control-label{
+  text-decoration: none
+
+}
+
+abbr{
+  border:none;
+  color:transparent;
+  display:none;
 }
 /********************** mixins, variables, etc. ************************/
 
@@ -145,8 +185,8 @@ $grayMediumLight: #eaeaea;
 }
 
 #header{
-  background:black;
-  height:85px;
+  background-image: linear-gradient(to bottom, #222222, #111111);
+  height:72px;
   padding-top:5px;
 }
 
@@ -159,14 +199,17 @@ $grayMediumLight: #eaeaea;
   margin-top:5px;
 }
 
-#hstat{
-
+#hstat a{
+  color:grey;
+  font-weight:bold;
   font-size:20px;
+  margin-right:7px;
+
 } 
 
 #hstat2{
   
-
+  
   font-size:12px;
   
 }
@@ -183,7 +226,7 @@ $grayMediumLight: #eaeaea;
 
   color:white;
   float:right;
-  margin-right:15px;
+  margin-right:20px;
 }
 
 .fstat{
@@ -191,6 +234,11 @@ $grayMediumLight: #eaeaea;
   margin-right:12px;
 }
 
+#stats-current{
+
+  margin-left:10px;
+  width:200px;
+}
 
 .container2 h1{
 
@@ -225,12 +273,18 @@ $grayMediumLight: #eaeaea;
 /***************************** FOOTER *******************************/
 
 footer {
-  margin-top: 45px;
+  /*background-image: linear-gradient(to bottom, #222222, #111111);*/
+  border-bottom: 1px solid grey;
+  border-top: 1px solid $grayMediumLight;
+  color: white;
+  height:50px;
+ 
   padding-left:25px;
   padding-right:25px;
   padding-top: 5px;
-  border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  margin-left:60px;
+  margin-right:60px;
+  
   }
 
  footer a {
@@ -589,6 +643,7 @@ p {
 
 
 .navbar-inner{
+  border:none;
   height:55px;
 }
 
