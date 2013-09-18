@@ -9,5 +9,5 @@
   <%= f.fields_for :reps do |builder| %>
     <%= render 'rep_fields', f: builder %>
   <% end %><br/>
- <p class='adds'> <%= link_to_add_fields "Add Set Info", f, :reps %></p>
+  <%= link_to_add_fields "Add Set Info", f, :reps %>
 </fieldset>

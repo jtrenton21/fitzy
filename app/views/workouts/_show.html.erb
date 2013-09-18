@@ -2,14 +2,14 @@
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Workout Name:</strong>
-  <%= @workouts.name %>
+  <%= @workout.name %>
 </p>
 <p>
   <strong>Workout Type:</strong>
-  <%= @workouts.workout_focus %>
+  <%= @workout.workout_focus %>
 </p>
 <ol class="exercises">
-<% @exercises.each do |exercise| %>
+<% for exercise in @exercises %>
   <li>
    <strong>Exercise Name:</strong> <%= exercise.name %><br>
    <strong>Target Muscle(s):</strong> <%= exercise.target %><br>

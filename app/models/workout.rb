@@ -1,23 +1,12 @@
 class Workout < ActiveRecord::Base
-  attr_accessible :name, :workout_focus, :day, :exercises_attributes
- 
+  include Roleable::Resource
 
- 
+  attr_accessible :name, :workout_focus, :day, :exercises_attributes, :reps_attributes, :exerciseworkouts_attributes, :user_id, :_destroy
+   attr_accessor :_destroy
   
-  has_many :users, through: :userworkouts
-  has_many :userworkouts
-  has_many :exercises
-  accepts_nested_attributes_for :exercises, allow_destroy: true
+  belongs_to :user
+  has_many :exercises, through: :exerciseworkouts
+  has_many :exerciseworkouts
   
- 
-  def workout_exercise
-  end
-
-
-
-
-
-
-
-
- end
+  accepts_nested_attributes_for :exercises
+end

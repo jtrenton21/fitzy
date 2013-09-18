@@ -3,8 +3,8 @@ class ExercisesController < ApplicationController
     before_filter :correct_user,   only: :destroy
   
   def index
-    @workouts = Workout.all
-    @exercises = User.find(current_user.id).exercises
+  @exercises = Exercise.all
+  # @exercise = @user.exercises.includes(:workouts)
   end
 
   def userexercise
@@ -14,28 +14,25 @@ class ExercisesController < ApplicationController
 
 
   def show
-    # if current_user? 
+   
       @exercise = Exercise.find(params[:id])
-    # else
-    #   @exercise = current_user.exercises.find(params[:id])
-    # end
+      @workout =  Exercise.find(params[:id]).workouts
   end
 
   def new
    @exercise = User.find(current_user.id).exercises.new
-   @workout = User.find(current_user.id).workouts.new
-    
+   # @workout = User.find(current_user.id).workouts.new
+   # @exercise.exerciseworkouts.build.build_workout
   end
 
  def create
-   # @exercise = Exercise.new(exercise_params)
-   # @exercise.save
-   if current_user.exercises.create(params[:id])
-      flash[:success] = "Exercise Created!"
-      redirect_to dashboard_path
+   @exercise = current_user.exercises.build(params[:exercise])
+      if @exercise.save
+       
+      flash[:notice] = "Exercise Created Successfully"
+      redirect_to exercises_path
     else
-      @feed_items = []
-      render 'static_pages/home'
+      render :action => 'new'
     end
   end
 
@@ -45,9 +42,8 @@ class ExercisesController < ApplicationController
 
   def update
     @exercise = Exercise.find(params[:id])
-    if @exercise.update_attributes(params[:id])
-
-      redirect_to @exercise, notice: "Successfully Updated Exercise."
+    if @exercise.update_attributes(params[:exercise])
+     redirect_to @exercise, notice: "Successfully Updated Exercise."
     else
       render :edit
     end
@@ -68,8 +64,9 @@ class ExercisesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
    
 
-    def correct_user
-      @exercise = current_user.exercises.find_by_id(params[:id])
-      redirect_to root_url if @exercise.nil?
-    end
+   def correct_user
+    @workout = current_user.workouts.find_by_id(params[:id])
+    @exercise = current_user.exercises.find_by_id(params[:id])
+    redirect_to root_url if @workout.nil?
+   end
 end

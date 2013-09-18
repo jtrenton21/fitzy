@@ -10,8 +10,11 @@
     </div>
   <% end %>
 <fieldset>
-  <%= f.fields_for :workouts do |builder| %>
-  <%= render 'workout_fields', f: builder %>
+  <%= hidden_field_tag "exercise[workout_ids][]", nil %>
+  <% Workout.all.each do |workout| %>
+  <%=check_box_tag "exercise[workout_ids][]", workout.id, @exercise.workout_ids.include?(workout.id), id: dom_id(workout)%>
+  <%=label_tag dom_id(workout), workout.name%>
+  <br/>
   <% end %><br/>
   <%= f.label :name, "Exercise Name" %>
   <%= f.text_field :name %><br/>

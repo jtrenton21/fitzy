@@ -1,11 +1,15 @@
 <p id="notice"><%= notice %></p>
-<p>
- <strong>Workout Name:</strong>
- 
+
+
+  <% unless @workout.name.blank? %>
+  <p>
+  <strong>Workout Name:</strong>
+  <%= @workout.name %></p>
+  
+  <%end%>
 
 
 
-</p>
 <p>
   <strong>Exercise Name:</strong>
   <%= @exercise.name %>

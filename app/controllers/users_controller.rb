@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user,
-                only: [:index, :edit, :update, :destroy, :following, :followers]
+                only: [:index, :edit, :update, :destroy, :dashboard, :following, :followers]
 
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: :destroy
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @workouts = @user.workouts.includes(:exercises)
   end
 
    def new
@@ -29,12 +30,19 @@ class UsersController < ApplicationController
   end
   
   def dashboard
-    @workouts = User.find(current_user.id).workouts
-    @exercises = User.find(current_user.id).exercises
-    # @workout = Workout.new
-    # @exercise = Exercise.new
+    @workouts = current_user.workouts.includes(:exercises)
+    # @workouts = Workout.all
+    # @exercises = Exercise.all
+    # @workouts = current_user.workouts
+    # @workouts = current_user.workouts.includes(:exercises)
+    
+   # @workouts = current_user.workouts.includes(:exercises)
+    
   end
- 
+  # def workoutnew
+  #   @workouts = current_user.workouts.build(params[:id])
+
+  # end
 
   
   def edit

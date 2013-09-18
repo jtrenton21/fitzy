@@ -5,12 +5,70 @@
 
 form .field, form .actions {
   margin: 12px 0;
+
+}
+
+.centering{
+  float:none;
+  margin:0 auto
 }
 
 
+#new_workout{
+
+  width:300px;
+  margin: 0 auto;
+}
+
+form input{
+  margin-bottom:10px;
+  width:130px;
+}
+form select{
+
+  width:144px;
+}
 input {
   height: auto !important;
+  
 }
+
+.add_fields{
+  background:white;
+  border:solid grey 1px;
+  border-radius:5px;
+  color:grey;
+  font-size:12px;
+  padding:3px 6px 3px 6px;
+  margin-bottom:10px;
+  margin-top:10px;
+
+}
+.actions input{
+  background:white;
+  border-radius:5px;
+  color:grey;
+  font-size:12px;
+}
+
+.adds{
+
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+textarea{
+
+  height:180px;
+}
+
+
+#tabs{
+
+  margin-bottom:20px;
+
+}
+
 
 .ptitle{
   color:#0088cc;
@@ -19,7 +77,11 @@ input {
   padding-top:30px;
 }
 
-
+#ecreate{
+  /*margin-left:35px;
+ */
+  margin-bottom:20px;
+}
 #landing{
 
  
@@ -42,8 +104,8 @@ input {
 
   clear:both;
   color:white;
-  margin-left:460px;
-  padding-top:20px;
+  margin-left:275px;
+  padding-top:10px;
   width:300px;
 }
 
@@ -278,7 +340,6 @@ footer {
   border-top: 1px solid $grayMediumLight;
   color: white;
   height:50px;
- 
   padding-left:25px;
   padding-right:25px;
   padding-top: 5px;
@@ -732,8 +793,9 @@ p {
 
   background:white;
   box-shadow:grey;
-  margin-right:10px;
+  margin-right:15px;
   text-decoration:none;
+  margin-bottom:20px;
 
 }
 
@@ -757,10 +819,12 @@ p {
   width:800px;
  
 }
+
 #tabs2{
 
-  width:1000px;
  
+ 
+  width:800px;
 }
 
 #tabs3{
@@ -768,7 +832,12 @@ p {
   width:600px;
  
 }
+#tabs4{
 
+  width:800px;
+  
+  
+}
 .parth{
 
   
@@ -783,9 +852,12 @@ p {
 }
 
 #wday{
-
+}
 
   
+#protab{
+
+  margin-bottom:15px;
 }
 
 #enum{

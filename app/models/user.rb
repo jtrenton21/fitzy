@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
+  include Roleable::Subject
   has_secure_password
-  attr_accessible :name, :email, :gender, :bday, :height, :weight, :password, :password_confirmation, :exercises_attributes
+  attr_accessible :name, :email, :gender, :bday, :height, :weight, :password, :password_confirmation
 
-  
-  has_many :userworkouts
-  has_many :workouts, through: :userworkouts
   has_many :exercises
+  has_many :workouts
   
-  
+  has_many :routines
+  has_many :exerciseworkouts, through: :routines
+ 
+ 
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
   has_many :reverse_relationships, foreign_key: "followed_id",
