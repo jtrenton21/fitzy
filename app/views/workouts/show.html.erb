@@ -4,7 +4,7 @@
   <%= @workout.name %>
 </p>
 <p>
-  <strong>Workout Type:</strong>
+  <strong>Workout Focus:</strong>
   <%= @workout.workout_focus %>
 </p>
 <ol class="exercises">
@@ -24,6 +24,7 @@
   </li>
 <% end %>
 </ol>
-
-<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Edit Workout', edit_workout_path(@workout) %></button>
-<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back to Workouts', workouts_path %></button>
+<div class='controls'>
+  <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Edit Workout', edit_workout_path(@workout) %></button>
+  <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back to Workouts', workouts_path %></button>
+</div>

@@ -1,8 +1,8 @@
 <div class="container">
-<h1>Editing Workout</h1>
-
-<%= render 'form' %>
-
-<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Display Workout', @workout %></button>
-<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back To List', workouts_path %></button>
+  <h1>Edit Workout</h1>
+	<%= render 'formedit' %>
+     <div class='controls'>
+	   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Display Workout', @workout %></button>
+	   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back To List', workouts_path %></button>
+	 </div>
 </div>

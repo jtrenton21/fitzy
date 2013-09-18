@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
-  <% unless @workout.name.blank? %>
+  
   <p>
   <strong>Workout Name:</strong>
   <%= @workout.name %></p>
@@ -38,7 +38,8 @@
   </li>
 
 </ol>
-
-<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Edit Exercise', edit_exercise_path(@exercise)%></button>
-<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back to Exercises', exercises_path %></button>
-<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'View Workout List', workouts_path %></button>
+<div class='controls'>
+   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Edit Exercise', edit_exercise_path(@exercise)%></button>
+   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back to Exercises', exercises_path %></button>
+   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'View Workout List', workouts_path %></button>
+</div>

@@ -65,4 +65,4 @@ end
 
   gem 'squeel'
 
- gem 'dotenv-rails', :groups => [:development, :test]
+ 

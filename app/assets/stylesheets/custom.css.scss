@@ -3,34 +3,34 @@
 
 /* UNIVERSAL ACROSS APP */
 
+/***********INPUT FORMS*************/
+
 form .field, form .actions {
   margin: 12px 0;
-
-}
-
-.centering{
-  float:none;
-  margin:0 auto
-}
-
-
-#new_workout{
-
-  width:300px;
-  margin: 0 auto;
 }
 
 form input{
   margin-bottom:10px;
   width:130px;
 }
-form select{
 
+form select{
   width:144px;
 }
+
 input {
   height: auto !important;
-  
+}
+
+textarea{
+
+  height:180px;
+}
+
+#new_workout{
+
+  width:300px;
+  margin: 0 auto;
 }
 
 .add_fields{
@@ -42,8 +42,22 @@ input {
   padding:3px 6px 3px 6px;
   margin-bottom:10px;
   margin-top:10px;
-
 }
+
+/********PAGE NAVIGATION BUTTONS ***********/
+
+.controls{
+
+  height:55px;
+  padding-top:10px;
+}
+.controls button{
+
+ display:inline;
+float:left;
+}
+/********FORM SUBMIT ***********/
+
 .actions input{
   background:white;
   border-radius:5px;
@@ -51,16 +65,19 @@ input {
   font-size:12px;
 }
 
+.submit{
+
+
+}
+
+
 .adds{
 
   margin-bottom:10px;
   margin-top:10px;
 }
 
-textarea{
 
-  height:180px;
-}
 
 
 #tabs{
