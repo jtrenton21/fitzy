@@ -56,6 +56,22 @@ textarea{
  display:inline;
 float:left;
 }
+
+
+/********Exercise Display ***********/
+
+.exworx{
+  font-size:18px;
+  margin-bottom:10px;
+  
+}
+.exercize{
+
+  
+  
+  
+}
+
 /********FORM SUBMIT ***********/
 
 .actions input{
@@ -70,6 +86,17 @@ float:left;
 
 }
 
+#edit_relationship_3{
+
+  float:left;
+}
+
+#follow_form input{
+
+  float:left;
+  margin-top:-1px;
+  width:65px;
+}
 
 .adds{
 
@@ -77,8 +104,23 @@ float:left;
   margin-top:10px;
 }
 
+#newuser{
+}
 
 
+.profile_stuff{
+
+  float:left;
+}
+
+#newu{
+
+  color:orange;
+}
+.sinform input{
+
+  width:205px;
+}
 
 #tabs{
 
@@ -410,6 +452,7 @@ footer img{
 #prograv{
   
   float:left;
+  
   margin-right:10px;
 }
 
@@ -430,7 +473,8 @@ footer img{
   margin-top:5px;
 }
 #prostuff{
-  
+  margin-bottom:-5px  
+
 }
 
 
@@ -650,8 +694,13 @@ aside {
 #dashboard {
   border-left: 1px solid black;
   padding-left: 10px;
+}
 
- 
+#hdash{
+
+  color:grey;
+  margin-bottom:10px;
+  text-align:center;
 }
 
 #forks-and-spoons li {
@@ -661,12 +710,40 @@ aside {
 
 /* Profile */
 
+.tabit{
+
+  font-weight:bold;
+  font-size:16px;
+}
+
 #profile {
   padding-left: 10px;
+  padding-top:10px;
 }
 
 p {
   line-height: .75em;
+}
+
+.profile_stuff{
+
+  float:left;
+}
+
+#proworks{
+  float:left;
+  margin-left:20px;
+  margin-top:10px;
+}
+
+#proworks table{
+
+  width:680px;
+}
+
+#proworks td{
+
+  width:170px;
 }
 
 #profiler{

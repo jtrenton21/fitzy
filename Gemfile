@@ -65,4 +65,6 @@ end
 
   gem 'squeel'
 
+  gem "amoeba"
+
  

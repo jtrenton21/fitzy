@@ -9,4 +9,9 @@ class Workout < ActiveRecord::Base
   has_many :exerciseworkouts
   
   accepts_nested_attributes_for :exercises
+
+  #  amoeba do
+  #   enable
+  # 	clone [:exercises]
+  # end
 end

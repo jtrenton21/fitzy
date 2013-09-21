@@ -39,6 +39,12 @@ class WorkoutsController < ApplicationController
     end
   end
 
+  def copy_exercise
+    exercise = Exercise.find(params[:id])
+    exercise_copy = exercise.amoeba_dup
+    exercise_copy.save
+  end
+
   # @workouts = Workout.joins[:exercises].where(workouts_id == exercises.workout_id
     # render text: params[:workout][:exercises_attributes]
 

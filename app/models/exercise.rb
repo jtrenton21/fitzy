@@ -7,9 +7,16 @@ class Exercise < ActiveRecord::Base
   
   has_many :workouts, through: :exerciseworkouts
   has_many :exerciseworkouts
-  has_many :reps
+  has_many :reps, :inverse_of => :exercise
   
   accepts_nested_attributes_for :reps, allow_destroy: true
   accepts_nested_attributes_for :exerciseworkouts, allow_destroy: true
   accepts_nested_attributes_for :workouts, allow_destroy: true
+
+
+  #  amoeba do
+  #   enable
+  #   clone [:workouts]
+  # end
 end
+

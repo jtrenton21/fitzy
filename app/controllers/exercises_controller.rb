@@ -4,6 +4,7 @@ class ExercisesController < ApplicationController
   
   def index
   @exercises = Exercise.all
+ @workouts = Workout.all
   # @exercise = @user.exercises.includes(:workouts)
   end
 
@@ -14,13 +15,22 @@ class ExercisesController < ApplicationController
 
 
   def show
-   
-      @exercise = Exercise.find(params[:id])
-      @workout =  Exercise.find(params[:id]).workouts
+     @exercise = Exercise.find(params[:id])
+     @workouts =  Exercise.find(params[:id]).workouts
+      # @workouts =  Workout.find(params[:id]).exercises
+      
   end
+ 
+ # def copy_workout
+ #    workout = Workout.find(params[:id])
+ #    workout_copy = workout.amoeba_dup
+ #    workout_copy.save
+ #  end
+ #  helper_method :copy_workout
 
   def new
    @exercise = User.find(current_user.id).exercises.new
+   
    # @workout = User.find(current_user.id).workouts.new
    # @exercise.exerciseworkouts.build.build_workout
   end

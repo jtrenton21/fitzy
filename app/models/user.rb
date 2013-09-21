@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
 
   has_many :exercises
   has_many :workouts
+  # amoeba do
+  #   enable
+  #   clone [:exercises, :workouts]
+  # end
   
   has_many :routines
   has_many :exerciseworkouts, through: :routines

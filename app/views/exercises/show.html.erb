@@ -1,45 +1,38 @@
 <p id="notice"><%= notice %></p>
-
-
-  
-  <p>
-  <strong>Workout Name:</strong>
-  <%= @workout.name %></p>
-  
-  <%end%>
-
-
-
-<p>
-  <strong>Exercise Name:</strong>
-  <%= @exercise.name %>
-</p>
-<p>
-<strong>Target Muscle:</strong> 
-<%= @exercise.muscle_target %><br>
-</p>
-<p>
-  <strong>Notes:</strong> 
-  <%= @exercise.info %><br>
-</p>
-
-<ol class="exercises">
-     
+ <div class='exworx'>   
     
-  <li>
-    <ol class="reps">
-      <% @exercise.reps.each  do |rep| %> 
-      <li>
-       <strong> Rep Amount:</strong> <%= rep.rep_amount %><br>
-       <strong> Rep Weight:</strong> <%= rep.rep_weight %>
+    <% @workouts.find_each  do |workout| %>
+    <strong>Workout Name:</strong>
+         <%= workout.name %><br/>
+    <strong>Workout Focus:</strong>
+    <%= workout.workout_focus %></br>
+  </div>    
+      <% workout.exercises.each do |exercise| %>
+  <div class='exercize'>     
+      <strong>Exercise Name:</strong>
+          <%= exercise.name %></br>
+      <strong>Target Muscle(s):</strong>
+       <%=exercise.muscle_target %></br>
+      <strong>Additional Info:</strong>
+           <%=exercise.info %></br>
+  </div>   
+  <div class='erepz'>   
+     <ol class="exercises"> 
+       <% exercise.reps.each do |rep| %>
+       <li>
+        <strong> Rep Amount:</strong> 
+       <%= rep.rep_amount %><br>
+      <strong> Rep Weight:</strong>
+          <%= rep.rep_weight %>
       </li>
-      <% end %>
+    <%end%>
     </ol>
-  </li>
-
-</ol>
+  </div>
+      
+    <%end%> 
+  <%end%> 
+   
 <div class='controls'>
-   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Edit Exercise', edit_exercise_path(@exercise)%></button>
-   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back to Exercises', exercises_path %></button>
-   <button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'View Workout List', workouts_path %></button>
+<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Edit Exercise', edit_exercise_path(@exercise) %></button>
+<button id='ecreate' class='btn btn-small btn-primary'><%= link_to 'Back to Exercises', exercises_path %></button>
 </div>

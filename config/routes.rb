@@ -18,6 +18,7 @@ Comps::Application.routes.draw do
   match '/about',            to: 'static_pages#about',       via: 'get'
   match '/contact',          to: 'static_pages#contact',     via: 'get'
   match '/exercise',         to: 'exercises#show',           via: 'get'
+  match '/exercise',         to: 'exercises#edit',           via: 'get'
   
   match '/dashboard',        to: 'users#dashboard',          via: 'get',  as: :dashboard
   match '/signup',           to: 'users#new',                via: 'get'

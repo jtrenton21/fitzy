@@ -3,7 +3,7 @@
 <div id="container2">
 	<div id='profiler'>
 	  <section  id="profile">
-	    <h1>Profile</h1>
+	   <!--  <h3>Profile</h3> -->
 	    <li id='prolist'>
 	     <div class="span4">
 	        <p id='prostuff' class="text-left profileImg">
@@ -12,36 +12,25 @@
 	        </p>
 	          <p id='profollow'><%= render 'follow_form' if signed_in? %> </p>      
 	      </li>
-	      </div>
-
+	     
+		  <div class='profile_stuff'>
 	        <!-- top tabs -->
 	        <div id='protab' class="span4 offset1">
 	          <ul id='profileTabs' class="nav nav-tabs">
 	            <li class="active">
-	              <a href="#workouts" data-toggle="tab">Workouts</a>
+	              <a class='tabit' href="#stats" data-toggle="tab">Current Stats</a>
 	            </li>
 	            <li class>
-	              <a href="#stats" data-toggle="tab">Stats</a>
-	            </li>
-	            <li class>
-	              <a href="#sports" data-toggle="tab">Sports/Activities</a>
+	              <a class='tabit' href="#sports" data-toggle="tab">Sports/Activities</a>
 	            </li>
 	          </ul>
-	        
 	          <!-- content for the top tabs -->
 	         <div id="profileTabsContent" class="tab-content">
-	             <div class="tab-pane fade active in text-left" id="workouts">
-	              
-	              <p>Workouts: <a href="user_workout">View My Workouts</a>
-	              
+	             <div class="tab-pane fade active in text-left" id="stats">
+		            <p>Gender: <%= current_user.gender %></p>
+		            <p>Height: <%= current_user.height %></p>
+		            <p>Weight: <%= current_user.weight %></p>
 	            </div>
-
-	            <div class="tab-pane fade text-left" id="stats">
-	              <p>Gender: <%= current_user.gender %></p>
-	              <p>Height: <%= current_user.height %></p>
-	              <p>Weight: <%= current_user.weight %></p>
-	            </div>
-	            
 	            <div class="tab-pane fade text-left" id="sports">
 	              <p>Sport 1</p>
 	              <p>Sport 2</p>
@@ -51,8 +40,14 @@
 	            </div>
 	          </div>
 	        </div>
-	      
-
+	      </div>
+		 </div>
+		  <div id='proworks'>
+		 	<%= render 'users/user_workout' %>
+			 
+			<%= render 'users/user_exercise' %>  
+		
+			</div>
 	     <!--  <div class="row">
 	        <div class="span4 profileCurrent">
 	          <h5><%= @user.name %>'s Current Workouts</h4>

@@ -1,4 +1,4 @@
-<h2 class='hdash'>My Exercises</h2>
+<h2 class='hdash'>Exercises</h2>
 <table id='tabs' class='table table-bordered'>
   <thead>
     <tr>
@@ -21,7 +21,7 @@
         <td><%=exercise.muscle_target%></td>
         <td><%= pluralize(exercise.reps.size, "Sets") %></td>
         <td>
-         <p class='linx'> <%= link_to 'Display', exercises_path %> </p>
+         <p class='linx'> <%= link_to 'Display', exercise %> </p>
          <p class='linx'> <%= link_to 'Edit', edit_exercise_path(exercise) %> </p>
          <p class='linx'> <%= link_to 'Delete', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         </td>
